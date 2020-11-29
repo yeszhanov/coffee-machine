@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { CoffeeProvider } from './contexts/CoffeMachineContext';
 ReactDOM.render(
-  <React.StrictMode>
+  <CoffeeProvider>
     <App />
-  </React.StrictMode>,
+  </CoffeeProvider>,
+
   document.getElementById('root')
 );
 
