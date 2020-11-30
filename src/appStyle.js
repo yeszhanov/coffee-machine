@@ -89,38 +89,7 @@ const coffeeMachine = makeStyles(() =>
     backButton: {
       marginRight: 10,
     },
-    root: {
-      // minWidth: 275,
-      height: '100%',
-      display: 'flex',
-      flexFlow: 'column',
-      background: '#c4c4c4',
-      '& .MuiCardContent-root': {
-        height: '100%',
-        padding: '0 16px',
-      },
-      // justifyContent: 'space-between',
-    },
-    checkRow: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      '& .MuiList-padding': {
-        padding: '0',
-      },
-      '& .MuiListItem-gutters': {
-        padding: '0',
-      },
-      '& .MuiAvatar-root': {
-        width: '30px',
-        height: '30px',
-      },
-      '& .MuiListItemText-multiline': {
-        margin: '0',
-      },
-      '& .MuiTypography-body1': {
-        lineHeight: 1,
-      },
-    },
+
     bullet: {
       display: 'inline-block',
       margin: '0 2px',
@@ -129,9 +98,7 @@ const coffeeMachine = makeStyles(() =>
     title: {
       fontSize: 14,
     },
-    pos: {
-      marginBottom: 12,
-    },
+
     stepperContent: {
       padding: '0 38px',
       height: '120px',
@@ -250,23 +217,27 @@ const coffeeMachine = makeStyles(() =>
     },
 
     coffeeMediumCup: {
-      width: '80px',
-      height: '47px',
+      width: '97px',
+      height: '79px',
       position: 'absolute',
-      bottom: '0',
-      right: '115px',
-      backgroundColor: '#FFF',
-      borderRadius: '0 0 70px 70px / 0 0 110px 110px',
-      '&:after': {
-        content: "''",
-        width: '20px',
-        height: '20px',
-        position: 'absolute',
-        top: '6px',
-        right: '-13px',
-        border: '5px solid #FFF',
-        borderRadius: '50%',
+      bottom: '65px',
+      right: '129px',
+      '& svg': {
+        width: '150px',
+        height: '150px',
       },
+      // backgroundColor: '#FFF',
+      // borderRadius: '0 0 70px 70px / 0 0 110px 110px',
+      // '&:after': {
+      //   content: "''",
+      //   width: '20px',
+      //   height: '20px',
+      //   position: 'absolute',
+      //   top: '6px',
+      //   right: '-13px',
+      //   border: '5px solid #FFF',
+      //   borderRadius: '50%',
+      // },
     },
 
     '@keyframes liquid': {
@@ -291,10 +262,7 @@ const coffeeMachine = makeStyles(() =>
         opacity: '0',
       },
     },
-    listLogo: {
-      width: '40px',
-      height: '40px',
-    },
+
     coffeeMediumLiquid: {
       width: '7px',
       height: '63px',
@@ -303,7 +271,7 @@ const coffeeMachine = makeStyles(() =>
       top: '294px',
       left: '79%',
       backgroundColor: '#74372b',
-      animation: '$liquid 4s 4s linear infinite',
+      animation: '$liquid 1s 1s linear infinite',
     },
     coffeeMediumSmoke: {
       width: '8px',

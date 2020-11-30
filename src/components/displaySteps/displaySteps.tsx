@@ -1,44 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Button from '@material-ui/core/Button';
+import React from 'react';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-
-import StepLabel from '@material-ui/core/StepLabel';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Typography from '@material-ui/core/Typography';
-
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import LocalCafeIcon from '@material-ui/icons/LocalCafe';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import { CoffeeContext } from '../../contexts/CoffeMachineContext';
-import Avatar from '@material-ui/core/Avatar';
 import { isArray } from '../../helpers/helper';
-import { ReactComponent as ReactLogo } from './assets/svg/americano.svg';
 import { coffeeData, dictionary } from '../../data/data';
 import useStyles from './displayStepsStyle';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: any;
-  value: any;
+interface StepsProps {
+  val: any;
+  currentStep: string;
+  onchange: any;
+  order: any;
 }
 
-const DisplayStepsContent = ({ val, currentStep, occhange }) => {
+const DisplayStepsContent = (props: StepsProps): JSX.Element => {
   const classes = useStyles();
+  const { val, currentStep, onchange, order } = props;
   return (
     <FormControl component="fieldset">
       <RadioGroup value={val}>
@@ -47,8 +28,8 @@ const DisplayStepsContent = ({ val, currentStep, occhange }) => {
             <span key={idx} className={classes.syropWrapper}>
               <FormControlLabel
                 name={isArray(coffeeData[currentStep]) ? 'Тип обжарки' : item}
-                // name={item}
-                onChange={(e) => occhange(e, currentStep, item)}
+                onChange={(e) => onchange(e, currentStep, item)}
+                value={order[item]}
                 control={
                   <Radio
                     value={
@@ -76,14 +57,13 @@ const DisplayStepsContent = ({ val, currentStep, occhange }) => {
                     name={item}
                     value={'asd'}
                     label="Выбрать"
-                    onChange={(e) => occhange(e, currentStep, item)}
+                    onChange={(e) => onchange(e, currentStep, item)}
                   >
                     {coffeeData[currentStep][item].types.map((type, idx) => {
                       return (
                         <MenuItem
                           key={idx}
                           value={coffeeData[currentStep][item].price}
-                          // ${coffeeData[currentStep][item].price}
                         >
                           {type}
                         </MenuItem>

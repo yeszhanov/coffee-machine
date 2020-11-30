@@ -2,11 +2,11 @@ import React, { createContext, useReducer, Dispatch } from 'react';
 import MainReducer from '../reducers/coffeeReducer';
 
 type InitialStateType = {
-  isConnectedToServer: boolean,
+  isPaid: boolean,
 };
 
 const initialState = {
-  isConnectedToServer: false,
+  isPaid: false,
 };
 
 const CoffeeContext = createContext<{
